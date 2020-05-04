@@ -40,8 +40,9 @@ user = (()=>{
 			.appendTo('#login_box')
 			.click(e=>{
 				e.preventDefault()
-				$.ajax({
-					url:'users/post',
+			 location.href = "/admin"
+				/*$.ajax({
+					url:'',
 					type:'post',
 					data:JSON.stringify({
 						userid : $('#userid').val(),
@@ -59,6 +60,7 @@ user = (()=>{
 						alert(r.status)
 					}
 				})
+				*/
 			})
 			$(`<input type="button"/>`)
 			.attr({value:"취소"})

@@ -9,37 +9,54 @@ admin = (()=>{
 	let onCreate = () => {
 		setContentView()
 		$.getJSON('/users',d=>{
+			$('#total_count').text('총회원수  : '+d.length)
 			$.each(d,(i,j)=>{
 				$(` <tr>
                         <td>
-                        	<span>1</span>
+                        	<span>${i+1}</span>
                         </td>
                         <td>
-                        	<span>1</span>
+                        	<span>${j.userid}</span>
                         </td>
                         <td>
-                        	<span>1</span>
+                        	<span id="user_`+(i+1)+`"></span>
                         </td>
                         <td>
-                        	<span>1</span>
+                        	<span>${j.ssn}</span>
                         </td>
                         <td>
-                        	<span>1</span>
+                        	<span>${j.email}</span>
                         </td>
                         <td>
-                        	<span>1</span>
+                        	<span>${j.phoneNumber}</span>
                         </td>
                         <td>
-                        	<span>1</span>
+                        	<span>${j.registerDate}</span>
                         </td>
                         </tr>`).appendTo('#userData')
+                        
+                        $(`<a>${j.name}</a>`)
+                        .css({cursor: 'pointer',color: 'blue'})
+                        .appendTo("#user_"+(i+1))
+                        .click(e => {
+                        	alert(`${j.userid}`)
+                        })
+                        })
+                        $("#user_"+(i+1))
+                        .css({cursor: 'pointer',color: 'blue'})
+                        e.preventDefault()
+                        $('#content').empty()
+                        $('#content').html(admin.detail())
 			})
-		})
+						
+		}
 		
-	}
-	let setCotentView = () => {
+	
+	let setContentView = () => {
 	    $('#userData tr').first().css({'background-color':'yellow'})
+	    
 	    }
+	
 	return {init}
 })()
 
