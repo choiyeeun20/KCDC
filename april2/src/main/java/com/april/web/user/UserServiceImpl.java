@@ -13,6 +13,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public Messenger register(User user) {
+		
 		return userDao.insert(user);
 	}
 

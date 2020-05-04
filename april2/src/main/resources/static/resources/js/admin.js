@@ -4,16 +4,43 @@ var admin = admin ||{}
 
 admin = (()=>{
 	let init = () => {
-		alert('1')
 		onCreate()
 	}
 	let onCreate = () => {
-		alert('2')
 		setContentView()
+		$.getJSON('/users',d=>{
+			$.each(d,(i,j)=>{
+				$(` <tr>
+                        <td>
+                        	<span>1</span>
+                        </td>
+                        <td>
+                        	<span>1</span>
+                        </td>
+                        <td>
+                        	<span>1</span>
+                        </td>
+                        <td>
+                        	<span>1</span>
+                        </td>
+                        <td>
+                        	<span>1</span>
+                        </td>
+                        <td>
+                        	<span>1</span>
+                        </td>
+                        <td>
+                        	<span>1</span>
+                        </td>
+                        </tr>`).appendTo('#userData')
+			})
+		})
 		
 	}
 	let setCotentView = () => {
-		alert('3')
-	}
+	    $('#userData tr').first().css({'background-color':'yellow'})
+	    }
 	return {init}
 })()
+
+

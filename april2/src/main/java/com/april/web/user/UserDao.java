@@ -2,8 +2,10 @@ package com.april.web.user;
 
 import java.util.List;
 
-import com.april.web.util.Messenger;
+import org.springframework.stereotype.Component;
 
+import com.april.web.util.Messenger;
+@Component
 public interface UserDao {
 
 	Messenger insert(User user);

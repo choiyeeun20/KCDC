@@ -1,6 +1,7 @@
 package com.april.web.user;
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,11 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.april.web.util.Messenger;
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
 	@Autowired UserService userService;
 	@PostMapping("")
 	public Messenger post(@RequestBody User user) {
+		userService.register(user);
 		return userService.register(user);
 	}
 	@GetMapping("")
