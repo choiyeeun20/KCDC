@@ -19,8 +19,7 @@ admin = (()=>{
 			$('#userList')
 				.css('cursor','pointer')
 				.click(e=>{
-				e.preventDafault()
-				location.href="/admin"
+				e.preventDefault()
 				})
 			$.getJSON('/users',d=>{
 				$('#total_count').text('총회원수  : '+d.length)
