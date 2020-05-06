@@ -10,7 +10,7 @@ public interface UserService  {
 
 	public List<User> findAll();
 
-	public Messenger findOne(String userid);
+	public User findOne(String userid);
 
 	public void modify(User user);
 

@@ -8,14 +8,14 @@ import com.april.web.util.Messenger;
 @Component
 public interface UserDao {
 
-	Messenger insert(User user);
+	public Messenger insert(User user);
 
-	List<User> selectAll();
+	public List<User> selectAll();
 
-	Messenger selectOne(String userid);
+	public User selectOne(String userid);
 
-	void update();
+	public void update();
 
-	void delete();
+	public void delete();
 
 }

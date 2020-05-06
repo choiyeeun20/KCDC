@@ -27,7 +27,7 @@ public class UserController {
 		return userService.findAll();
 	}
 	@GetMapping("/{userid}")
-	public Messenger detail(@PathVariable String userid) {
+	public User detail(@PathVariable String userid) {
 		return userService.findOne(userid);
 	}
 	@PutMapping("/{useid}")
